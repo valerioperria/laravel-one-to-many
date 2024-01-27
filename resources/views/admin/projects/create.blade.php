@@ -37,6 +37,16 @@
             </div>
 
             <div class="mb-3">
+                <label for="type">Select type</label>
+                <select class="form-select" name="type_id" id="type">
+                    <option value="">No type</option>
+                    @foreach ($types as $type)
+                        <option value="{{ $type->id }}">{{ $type->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="mb-3">
                 <img id="preview-img" src="" alt="" style="max-height: 250px">
             </div>
 
