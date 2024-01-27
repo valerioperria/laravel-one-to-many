@@ -29,6 +29,16 @@
             </div>
 
             <div class="mb-3">
+                <label for="type">Type</label>
+                <select class="form-select" name="type_id" id="type">
+                    <option @selected(!old('type_id', $project->type_id))value="">No type</option>
+                    @foreach ($types as $type)
+                        <option @selected(old('type_id', $project->type_id) == $type->id) value="{{ $type->id }}">{{ $type->name }}</option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="mb-3">
                 <label for="cover_image">Image</label>
                 <input type="file" class="form-control" id="cover_image" name="cover_image">
             </div>
