@@ -15,6 +15,10 @@
         @endif
 
         <div class="mt-4">
+            Type: {{ $project->type ? $project->type->name : 'No type' }}
+        </div>
+
+        <div class="mt-4">
             {{ $project->created_at }}
         </div>
 
@@ -33,5 +37,6 @@
         <div>
             <a class="btn btn-warning" href="{{ route('admin.projects.edit', ['project' => $project->slug]) }}">Modifica</a>
         </div>
+        
         @include('admin.projects.partials.delete_button')
     @endsection
